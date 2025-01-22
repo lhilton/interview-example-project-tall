@@ -75,11 +75,19 @@
             "./vendor/bin/sail php artisan migrate:rollback"
         ],
         "lint": [
-            "./vendor/bin/pint",
-            "npm run lint"
+            "./vendor/bin/sail php ./vendor/bin/pint",
+            "./vendor/bin/sail npm run lint"
         ],
         "stan": [
-            "@php ./vendor/bin/phpstan analyse"
+            "./vendor/bin/sail php ./vendor/bin/phpstan analyse"
+        ],
+        "pest": [
+            "./vendor/bin/sail php artisan test --parallel"
+        ],
+        "prcheck": [
+            "composer lint",
+            "composer stan",
+            "composer pest"
         ]
     },
     "extra": {
