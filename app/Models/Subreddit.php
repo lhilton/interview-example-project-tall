@@ -25,7 +25,7 @@ class Subreddit extends Model
     {
         static::creating(function (self $subreddit) {
             if ($subreddit->user?->subreddits()->count() >= 5) {
-                $subreddit->user?->subreddits()->orderBy('created_at')->first()->delete();
+                $subreddit->user->subreddits()->orderBy('created_at')->first()?->delete();
             }
         });
     }
@@ -49,7 +49,7 @@ class Subreddit extends Model
     }
 
     /**
-     * Get the user's first name.
+     * @return Attribute<string, null>
      */
     protected function jsonURL(): Attribute
     {
@@ -59,7 +59,7 @@ class Subreddit extends Model
     }
 
     /**
-     * Get the user's first name.
+     * @return Attribute<string, null>
      */
     protected function jsonTopURL(): Attribute
     {

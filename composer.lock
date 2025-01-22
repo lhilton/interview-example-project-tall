@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "543943e214c00dba6eb1e96557a5a896",
+    "content-hash": "d653b25b586cf6ba52bac95fd442cee0",
     "packages": [
         {
             "name": "amphp/amp",
@@ -5222,6 +5222,64 @@
                 "source": "https://github.com/revoltphp/event-loop/tree/v1.0.6"
             },
             "time": "2023-11-30T05:34:44+00:00"
+        },
+        {
+            "name": "smpita/typeas",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smpita/typeas.git",
+                "reference": "d4bb1532a76da095d6df2c8746a3fc1878e8cd38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smpita/typeas/zipball/d4bb1532a76da095d6df2c8746a3fc1878e8cd38",
+                "reference": "d4bb1532a76da095d6df2c8746a3fc1878e8cd38",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0.1",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^8.4|^9.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Helpers.php"
+                ],
+                "psr-4": {
+                    "Smpita\\TypeAs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sean Pearce",
+                    "email": "smpita@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy type control for static analysis",
+            "homepage": "https://github.com/smpita/typeas",
+            "keywords": [
+                "laravel",
+                "smpita",
+                "typeas"
+            ],
+            "support": {
+                "issues": "https://github.com/smpita/typeas/issues",
+                "source": "https://github.com/smpita/typeas/tree/v3.1.1"
+            },
+            "time": "2024-03-13T16:42:23+00:00"
         },
         {
             "name": "spatie/laravel-data",
