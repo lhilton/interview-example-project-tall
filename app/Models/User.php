@@ -76,4 +76,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Website::class);
     }
+
+    /**
+     * @return HasMany<Subreddit, $this>
+     */
+    public function subreddits(): HasMany
+    {
+        return $this->hasMany(Subreddit::class);
+    }
 }
