@@ -20,7 +20,7 @@
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
-        "laravel/sail": "^1.26",
+        "laravel/sail": "^1.40",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.1",
         "pestphp/pest": "^3.7",
@@ -57,6 +57,21 @@
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+        ],
+        "dev:up": [
+            "./vendor/bin/sail up -d"
+        ],
+        "dev:down": [
+            "./vendor/bin/sail down"
+        ],
+        "migrate": [
+            "./vendor/bin/sail php artisan migrate"
+        ],
+        "migrate:fresh": [
+            "./vendor/bin/sail php artisan migrate:fresh"
+        ],
+        "migrate:rollback": [
+            "./vendor/bin/sail php artisan migrate:rollback"
         ]
     },
     "extra": {
