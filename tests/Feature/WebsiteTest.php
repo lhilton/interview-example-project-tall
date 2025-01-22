@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Models\Website;
 
+use function Pest\Laravel\assertDatabaseCount;
 use function Pest\Laravel\assertDatabaseHas;
 
 beforeEach(function () {
@@ -36,4 +37,12 @@ it('can be seen by the owning user', function () {
         ->create();
 
     expect($this->user->websites()->first()->id)->toBe($website->id);
+});
+
+it('can run the test seeder requested in github issue #3', function () {
+    $this->seed(\Database\Seeders\UserWebsiteTestSeeder::class);
+    assertDatabaseCount('websites', 10);
+    Website::all()->each(function (Website $website) {
+        expect($website->tags()->count())->toBeGreaterThan(0);
+    });
 });
