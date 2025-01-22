@@ -8,6 +8,6 @@
     </div>
 
     <div class="px-4 sm:px-0">
-        {{ $aside ?? '' }}
+        {{ $aside ?? "" }}
     </div>
 </div>
