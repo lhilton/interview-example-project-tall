@@ -1,0 +1,13 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+    - phpstan-baseline.neon
+
+parameters:
+
+    paths:
+        - app/
+
+    # Level 10 is the highest level, however this level is relatively new
+    # and I have not switched up to that yet.
+    level: 9

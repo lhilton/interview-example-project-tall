@@ -1,0 +1,104 @@
+########
+# File generated with command: ./vendor/bin/phpstan analyse --generate-baseline
+#
+# Normally I would not do this for a clean / small project. At this point there are only 16 errors
+# reported. I added this to demonstrate a pathway to start using StAn with a large legacy codebase.
+# This file will allow us to run the analysis without reporting the below errors.
+########
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$photo of method App\\Models\\User\:\:updateProfilePhoto\(\) expects Illuminate\\Http\\UploadedFile, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Fortify/UpdateUserProfileInformation.php
+
+		-
+			message: '#^Parameter \#2 \$input of method App\\Actions\\Fortify\\UpdateUserProfileInformation\:\:updateVerifiedUser\(\) expects array\<string, string\>, array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Fortify/UpdateUserProfileInformation.php
+
+		-
+			message: '#^Method App\\Actions\\Jetstream\\AddTeamMember\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Actions/Jetstream/AddTeamMember.php
+
+		-
+			message: '#^Method App\\Actions\\Jetstream\\CreateTeam\:\:create\(\) should return App\\Models\\Team but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Actions/Jetstream/CreateTeam.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:each\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: mixed, Closure\(App\\Models\\Team\)\: void given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Jetstream/DeleteUser.php
+
+		-
+			message: '#^Method App\\Actions\\Jetstream\\InviteTeamMember\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Actions/Jetstream/InviteTeamMember.php
+
+		-
+			message: '#^Parameter \#1 \$invitation of class Laravel\\Jetstream\\Mail\\TeamInvitation constructor expects Laravel\\Jetstream\\TeamInvitation, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Jetstream/InviteTeamMember.php
+
+		-
+			message: '#^Cannot access property \$id on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Actions/Jetstream/RemoveTeamMember.php
+
+		-
+			message: '#^PHPDoc type array\<int, string\> of property App\\Models\\Team\:\:\$fillable is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$fillable\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/Team.php
+
+		-
+			message: '#^Method App\\Models\\TeamInvitation\:\:team\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/TeamInvitation.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:belongsTo\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/TeamInvitation.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:belongsTo\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Models/TeamInvitation.php
+
+		-
+			message: '#^PHPDoc type array\<int, string\> of property App\\Models\\User\:\:\$appends is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$appends\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^PHPDoc type array\<int, string\> of property App\\Models\\User\:\:\$fillable is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$fillable\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^PHPDoc type array\<int, string\> of property App\\Models\\User\:\:\$hidden is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$hidden\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Parameter \#1 \$value of static method Illuminate\\Support\\Str\:\:lower\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Providers/FortifyServiceProvider.php
