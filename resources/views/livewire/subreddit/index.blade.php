@@ -25,7 +25,7 @@
                         wire:loading.class="opacity-50"
                         wire:target="save"
                         type="submit"
-                        class="relative flex shrink-0 items-center rounded-r-xl bg-white text-lg font-bold px-5 py-2 text-white outline-none bg-[#05a6c5]"
+                        class="relative flex shrink-0 items-center rounded-r-xl text-lg font-bold px-5 py-2 text-white outline-none bg-[#05a6c5]"
                     >
                         <span wire:loading.class="opacity-0" wire:target="save">
                             SUBSCRIBE
