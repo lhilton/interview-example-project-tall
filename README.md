@@ -10,6 +10,22 @@ I did timebox this project to three hours, with execution time being just about 
 
 I picked approaches that appeared to be new or underused patterns in order to spark conversation. For example, I leveraged the Spatie Data package instead of a simple class.
 
+## Features
+
+This example project had two major functions:
+
+- Provide a generic link archive
+    - Include a daily email with any links found offline
+- Provide a Reddit top-post style dashboard
+
+It is about as bare-bones as you can get and still demonstrate a reasonable range of basic aptitudes.
+
 ## How to grok this project
 
 There are six issues on this repository, each with a seperate PR resolving the needs documented. The PR's are inteded to be handled in numeric order, lowest to highest. I would suggest starting with the first PR and reading the comments, code and commits before moving to higher numbered PR's.
+
+While reading the code keep an eye out for my more verbose comments. There are a couple of places I wanted to draw attention towards. These are intended to be conversation points during a live call.
+
+## Requirements
+
+Though this is a PHP / Laravel project, it was built using [Sail](https://laravel.com/docs/11.x/sail) and should run anywhere that you can install [Docker](https://docs.docker.com/engine/install/). Please reach out if you need help with this setup.
