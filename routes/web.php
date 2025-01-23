@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Subreddit\Index;
 use App\Livewire\Websites\View;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('website/{website}', View::class)->name('website.view');
+    Route::get('reddit', Index::class)->name('subreddit.index');
 });
