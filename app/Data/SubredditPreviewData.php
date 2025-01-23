@@ -38,12 +38,12 @@ class SubredditPreviewData extends Data
         return new self(
             subreddit: $subreddit,
             subreddit_name: TypeAs::string(Arr::get($json, "{$prefix}subreddit", $subreddit->url)),
-            title: TypeAs::string(Arr::get($json, "{$prefix}title", Arr::get($json, "{$prefix}display_name"))),
-            permalink: TypeAs::string(Arr::get($json, "{$prefix}permalink", Arr::get($json, "{$prefix}url"))),
+            title: TypeAs::nullableString(Arr::get($json, "{$prefix}title", Arr::get($json, "{$prefix}display_name"))),
+            permalink: TypeAs::nullableString(Arr::get($json, "{$prefix}permalink", Arr::get($json, "{$prefix}url"))),
             score: TypeAs::int(Arr::get($json, "{$prefix}score", 0)),
             ups: TypeAs::int(Arr::get($json, "{$prefix}ups", 0)),
-            created_at: CarbonImmutable::parse(TypeAs::int(Arr::get($json, "{$prefix}created_utc", Arr::get($json, "{$prefix}created")))),
-            thumbnail: TypeAs::string(Arr::get($json, "{$prefix}thumbnail", Arr::get($json, "{$prefix}community_icon"))),
+            created_at: CarbonImmutable::parse(TypeAs::nullableInt(Arr::get($json, "{$prefix}created_utc", Arr::get($json, "{$prefix}created")))),
+            thumbnail: TypeAs::nullableString(Arr::get($json, "{$prefix}thumbnail", Arr::get($json, "{$prefix}community_icon"))),
             request_successful: $response->successful(),
         );
     }

@@ -38,7 +38,9 @@ class Index extends Component
         $previews = collect();
 
         foreach ($responses as $subreddit_id => $response) {
-            $previews->push(SubredditPreviewData::from($response, $subs->where('id', $subreddit_id)->first()));
+            if ($response->successful()) {
+                $previews->push(SubredditPreviewData::from($response, $subs->where('id', $subreddit_id)->first()));
+            }
         }
 
         return $previews->sortByDesc('score');
@@ -68,6 +70,12 @@ class Index extends Component
                     }
 
                     if (! $result?->successful()) {
+                        $fail($error);
+                    }
+
+                    $children = $result->json('data.children', []);
+
+                    if(! is_array($children) || empty($children)) {
                         $fail($error);
                     }
                 },
